@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * interactive - returns true if shell is interactive mode
- * @info: struct address
+ * interactive - this will return true if my shell is in it's interactive mode
+ * @info: this is the struct address
  *
- * Return: 1 if interactive mode, 0 otherwise
+ * Return: Returns 1 if shell is in interactive mode and if not in teh interactiev mdoe will return a 0
  */
 int interactive(info_t *info)
 {
@@ -12,54 +12,54 @@ int interactive(info_t *info)
 }
 
 /**
- * is_delim - checks if character is a delimeter
- * @c: the char to check
- * @delim: the delimeter string
+ * is_delimeter - checking if character is a delimeter
+ * @k: the char to check
+ * @delimeter: the delimeter string
  * Return: 1 if true, 0 if false
  */
-int is_delim(char c, char *delim)
+int is_delimeter(char k, char *delim)
 {
-	while (*delim)
-		if (*delim++ == c)
+	while (*delimeter)
+		if (*delimeter++ == k)
 			return (1);
 	return (0);
 }
 
 /**
- *_isalpha - checks for alphabetic character
- *@c: The character to input
- *Return: 1 if c is alphabetic, 0 otherwise
+ *_isalpha - this will check for the alphabetic characters
+ *@k: The character to input
+ *Return: if k is an alphabet return 1, if not k, return 0
  */
 
-int _isalpha(int c)
+int _isalpha(int k)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	if ((k >= 'l' && k <= 'r') || (k >= 'L' && k <= 'R'))
 		return (1);
 	else
 		return (0);
 }
 
 /**
- *_atoi - converts a string to an integer
- *@s: the string to be converted
- *Return: 0 if no numbers in string, converted number otherwise
+ *shell_atoi - converts a string to an integer
+ *@a: the string to be converted
+ *Return: if the string has no numbers return, if there are numbers return the converted number
  */
 
-int _atoi(char *s)
+int shell_atoi(char *a)
 {
-	int i, sign = 1, flag = 0, output;
+	int m, sign = 1, flag = 0, output;
 	unsigned int result = 0;
 
-	for (i = 0;  s[i] != '\0' && flag != 2; i++)
+	for (m = 0;  s[m] != '\0' && flag != 2; m++)
 	{
-		if (s[i] == '-')
+		if (s[m] == '-')
 			sign *= -1;
 
-		if (s[i] >= '0' && s[i] <= '9')
+		if (s[m] >= '0' && s[i] <= '9')
 		{
 			flag = 1;
 			result *= 10;
-			result += (s[i] - '0');
+			result += (s[m] - '0');
 		}
 		else if (flag == 1)
 			flag = 2;
